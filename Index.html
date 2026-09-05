@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Stream Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="feed-container" id="feed"></div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <div class="bottom-drawer" id="streamDrawer">
+    <div class="drawer-header">
+      <button class="back-btn" id="closeStreamDrawerBtn" aria-label="Close stream list">‹</button>
+      <span class="drawer-title">
+        Select Stream
+        <span class="stream-count-badge" id="streamCountBadge">(0)</span>
+      </span>
+
+      <div class="filter-actions-group">
+        <button class="filter-btn" id="filterNameBtn" title="Toggle Name Filter (F/T)" aria-label="Toggle name filter">
+          <span class="filter-badge" id="nameFilterBadge">F</span>
+        </button>
+
+        <button class="filter-btn" id="filterLiveBtn" title="Toggle Live Only" aria-label="Toggle live only filter"></button>
+
+        <button class="filter-btn" id="resetFiltersBtn" title="Reset Filters" aria-label="Reset filters"></button>
+      </div>
+    </div>
+    <div class="stream-list" id="streamList"></div>
+  </div>
+
+  <div class="bottom-drawer" id="qualityDrawer">
+    <div class="drawer-header">
+      <button class="back-btn" id="closeQualityDrawerBtn" aria-label="Close quality menu">‹</button>
+      <span class="drawer-title">Qualité • Avancé</span>
+    </div>
+    <div class="quality-list" id="qualityList"></div>
+  </div>
+
+  <div class="bottom-drawer" id="infoDrawer">
+    <div class="drawer-header">
+      <button class="back-btn" id="closeInfoDrawerBtn" aria-label="Close model info">‹</button>
+      <span class="drawer-title">Model Info</span>
+    </div>
+    <div class="info-content" id="infoContent"></div>
+  </div>
+  
+  <script>
+  import { dataset } from './master/Models.js';
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
